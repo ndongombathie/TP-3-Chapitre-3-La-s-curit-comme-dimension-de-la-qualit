@@ -7,6 +7,18 @@ Man-in-the-Middle, phishing. Trois sont codées et exploitables dans ce
 starter ; les trois autres sont à analyser sans preuve de code (elles ne
 se démontrent pas proprement dans un TP local).
 
+## Partie 1 - La sécurité comme dimension de la qualité (ISO/IEC 25010)
+
+*À remplir avant de coder (voir README, Partie 1).* Pour chacune des 3
+vulnérabilités codées, citez au moins une caractéristique ISO/IEC 25010
+**autre que la sécurité** qu'elle dégrade aussi, et justifiez en une phrase.
+
+| Vulnérabilité | Caractéristique ISO 25010 dégradée (hors sécurité) | Pourquoi |
+|---|---|---|
+| Injection SQL | | |
+| XSS stocké | | |
+| Force brute | | |
+
 ## 1. Injection SQL - `patients/views.py`
 
 **Mécanisme observé dans le code :** (comment la requête est construite,
