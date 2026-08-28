@@ -1,6 +1,6 @@
 # Attaques identifiées sur SunuSanté
 
-Nom / Groupe : Ndonog MBATH et Khady KA / Groupe 6
+Nom / Groupe : Ndongo MBATH et Khady KA / Groupe 6
 
 Le chapitre 3 couvre 6 attaques : injection, force brute, DoS/DDoS, XSS,
 Man-in-the-Middle, phishing. Trois sont codées et exploitables dans ce
@@ -147,6 +147,6 @@ Remplissez ce tableau pour les 6 attaques (reprend la structure du cours) :
 | Injection | O | O | | requête SQL construite avec q directement |
 | Force brute | O | | O | aucune limitation des tentatives |
 | DoS/DDoS | | | O | aucune protection anti-DoS, WAF ou rate limiting global |
-| XSS | O | | | utilisation de {{ rdv.notes|safe }} |
+| XSS | O | | | utilisation de html {{ rdv.notes|safe }} |
 | MITM | O | O | | HTTP non chiffré avec runserver |
 | Phishing | O | O | |sensibilisation nécessaire |

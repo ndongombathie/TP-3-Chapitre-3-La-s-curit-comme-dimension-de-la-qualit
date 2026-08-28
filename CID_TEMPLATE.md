@@ -1,6 +1,6 @@
 # Le triptyque CID appliqué à SunuSanté
 
-Nom / Groupe :
+Nom / Groupe : Ndongo MBATH et Khady KA / Groupe 6
 
 Le cours illustre le CID avec l'exemple d'un dossier médical électronique
 (chapitre 3, partie 2) : c'est exactement ce que gère SunuSanté. Ne
