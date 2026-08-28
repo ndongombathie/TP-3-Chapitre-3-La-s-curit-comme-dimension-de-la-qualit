@@ -27,10 +27,29 @@ pourquoi c'est dangereux)
 **Preuve d'exploitation :** testez `GET /patients/recherche/?q=' OR '1'='1`
 et comparez le nombre de résultats avec une recherche normale. Collez
 votre observation (nombre de résultats avant/après).
+* **Recherche normale**
 
-**CID visé :**
+![alt text](<Capture d’écran du 2026-08-28 10-02-14.png>)
+
+* **Recherche avancée avec injection SQL**
+
+![alt text](<Capture d’écran du 2026-08-28 10-07-28.png>)
+
+**CID visé :** la confidentialité.
 
 **Correctif appliqué :** (nom de la méthode/fonction, principe utilisé)
+
+* Correctif :
+```python
+def recherche(request):
+    q = request.GET.get('q', '')
+    if q:
+        results = Patient.objects.filter(Q(nom__icontains=q) | Q(prenom__icontains=q))
+    else:
+        results = Patient.objects.all()
+    return render(request, 'rendezvous/recherche.html', {'results': results})
+```
+* Principe utilisé : filtrer les résultats par nom et prénom.
 
 ## 2. XSS stocké - `rendezvous/templates/rendezvous/facture.html`
 
@@ -40,7 +59,7 @@ votre observation (nombre de résultats avant/après).
 `<script>alert('xss')</script>`, puis consultez la page facture du
 patient. Que se passe-t-il avant correctif ? Après ?
 
-**CID visé :**
+**CID visé :** 
 
 **Correctif appliqué :**
 
