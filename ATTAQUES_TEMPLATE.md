@@ -53,15 +53,27 @@ def recherche(request):
 
 ## 2. XSS stocké - `rendezvous/templates/rendezvous/facture.html`
 
-**Mécanisme observé dans le code :**
+**Mécanisme observé dans le code :** l'utilisation du filtre |safe dans {{ rdv.notes|safe }} désactive l'échappement automatique de Django et peut permettre l'interprétation de contenu HTML non fiable. Si rdv.notes contient une donnée contrôlée par un utilisateur et stockée en base, cela peut exposer l'application à une vulnérabilité XSS stockée.
+
 
 **Preuve d'exploitation :** créez un rendez-vous avec la note
 `<script>alert('xss')</script>`, puis consultez la page facture du
 patient. Que se passe-t-il avant correctif ? Après ?
 
-**CID visé :** 
+* **avant correctif**
 
-**Correctif appliqué :**
+![alt text](<Capture d’écran du 2026-08-28 10-50-34.png>)
+
+Une boite de dialogue apparaît avec le message "xss" donc le contenu HTML est injecté dans la page facture du patient. le navigateur exécute le script et affiche le message "xss" dans la console du navigateur.
+
+**CID visé :** la confidentialité.
+
+**Correctif appliqué :** 
+```html
+<td>{{ rdv.notes }}</td> 
+```
+
+Mesure de protection : conserver l'échappement automatique de Django et ne désactiver cette protection qu'après une sanitisation appropriée du contenu.
 
 ## 3. Force brute - `personnel/views.py`
 
