@@ -15,9 +15,9 @@ vulnérabilités codées, citez au moins une caractéristique ISO/IEC 25010
 
 | Vulnérabilité | Caractéristique ISO 25010 dégradée (hors sécurité) | Pourquoi |
 |---|---|---|
-| Injection SQL | | |
-| XSS stocké | | |
-| Force brute | | |
+| Injection SQL | Fiabilité, maintenabilité, performance | Une injection peut provoquer des erreurs ou des comportements imprévus, perturber les données et entraîner des requêtes coûteuses. Un code construit avec des requêtes SQL non maîtrisées est également plus difficile à maintenir et à faire évoluer. |
+| XSS stocké | Utilisabilité, fiabilité, compatibilité | Le contenu malveillant peut modifier l'affichage de l'application, perturber son fonctionnement et provoquer des comportements différents selon le navigateur ou l'environnement d'exécution. |
+| Force brute | Performance, fiabilité, disponibilité | De nombreuses tentatives de connexion consomment des ressources, ralentissent le service et peuvent finir par rendre l'application indisponible ou instable. |
 
 ## 1. Injection SQL - `patients/views.py`
 
