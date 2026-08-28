@@ -1,6 +1,6 @@
 # Attaques identifiées sur SunuSanté
 
-Nom / Groupe :
+Nom / Groupe : Ndonog MBATH et Khady KA / Groupe 6
 
 Le chapitre 3 couvre 6 attaques : injection, force brute, DoS/DDoS, XSS,
 Man-in-the-Middle, phishing. Trois sont codées et exploitables dans ce
