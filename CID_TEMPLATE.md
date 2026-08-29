@@ -15,8 +15,16 @@ de votre projet.
   rendez-vous dans SunuSanté (regardez `/admin/`, `/patients/recherche/`,
   `/rendezvous/facture/<id>/`) ? Y a-t-il un contrôle d'accès sur ces
   pages ?
+
+  Non ,les views ne sont pas protégées par une autorisation(permission,Role-Based Access Control) donc tout le monde peut accéder à la liste des patients et leurs
+  rendez-vous dans SunuSanté.
+  
 - Le mot de passe du personnel est-il stocké et vérifié correctement
   (indice : regardez comment Django gère `User.objects.create_user`) ?
+
+  Oui ,le mot de passe est stocké et vérifié correctement avec le hash de mot de passe de Django.
+
+  ![alt text](<Capture d’écran du 2026-08-28 13-01-36.png>)
 
 ## Intégrité
 
