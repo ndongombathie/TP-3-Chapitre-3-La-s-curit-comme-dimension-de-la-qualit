@@ -30,7 +30,7 @@
                         <td>{{ rdv.prix }} FCFA</td>
                         {# TODO (TP3) : |safe désactive l'échappement automatique de Django. #}
                         {# Une note contenant du HTML/JS est injectée telle quelle : XSS stocké. #}
-                        <td>{{ rdv.notes|safe }}</td>
+                        <td>{{ rdv.notes }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
