@@ -100,6 +100,8 @@ Que se passe-t-il avant correctif ? Après ?
 
 Avant le correctif, la fonction connexion() accepte les tentatives de connexion successives sans appliquer de limitation. Chaque mauvais mot de passe provoque simplement le message « Identifiants incorrects » puis une redirection HTTP 302 vers la page de connexion. Même après 20 tentatives consécutives, aucun blocage, ralentissement ou limitation n'est appliqué. L'application est donc vulnérable aux attaques par force brute.
 
+![alt text](<Capture d’écran du 2026-09-02 12-24-50.png>)
+
 * **Que se passe-t-il après correctif ?**
 
 Après le correctif, un mécanisme de limitation des tentatives est mis en place. Après un certain nombre d'échecs consécutifs, les nouvelles tentatives sont ralenties, temporairement bloquées ou refusées, par exemple avec une réponse HTTP 429 Too Many Requests. Cela réduit fortement la possibilité pour un attaquant d'essayer rapidement un grand nombre de mots de passe.
