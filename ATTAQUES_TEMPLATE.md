@@ -54,10 +54,10 @@ votre observation (nombre de résultats avant/après).
 def recherche(request):
     q = request.GET.get('q', '')
     if q:
-        results = Patient.objects.filter(Q(nom__icontains=q) | Q(prenom__icontains=q))
+        resultats = Patient.objects.filter(Q(nom__icontains=q) | Q(prenom__icontains=q))
     else:
-        results = Patient.objects.all()
-    return render(request, 'rendezvous/recherche.html', {'results': results})
+        resultats = Patient.objects.all()
+    return render(request, 'patients/recherche.html', {'resultats': resultats})
 ```
 * Principe utilisé : filtrer les résultats par nom et prénom.
 
@@ -117,8 +117,9 @@ SunuSanté n'a pas de protection anti-DoS. En vous appuyant sur le cours
 plausible sur SunuSanté tel qu'il existe aujourd'hui, (b) une contre-mesure
 réaliste à l'échelle d'un projet comme celui-ci.
 
-Scénario : un attaquant envoie massivement des requêtes vers SunuSanté afin de saturer le serveur ou la base de données, rendant le service lent ou indisponible.
-Contre-mesure : mettre en place un rate limiting sur les endpoints sensibles et placer un WAF/CDN devant l'application afin de filtrer et absorber une partie du trafic malveillant.
+* **Scénario :** un attaquant envoie massivement des requêtes vers SunuSanté afin de saturer le serveur ou la base de données, rendant le service lent ou indisponible.
+
+* **Contre-mesure :** mettre en place un rate limiting sur les endpoints sensibles et placer un WAF/CDN devant l'application afin de filtrer et absorber une partie du trafic malveillant.
 
 ## 5. Man-in-the-Middle - analyse sans code
 
@@ -147,6 +148,6 @@ Remplissez ce tableau pour les 6 attaques (reprend la structure du cours) :
 | Injection | O | O | | requête SQL construite avec q directement |
 | Force brute | O | | O | aucune limitation des tentatives |
 | DoS/DDoS | | | O | aucune protection anti-DoS, WAF ou rate limiting global |
-| XSS | O | | | utilisation de html {{ rdv.notes|safe }} |
+| XSS | O | | | utilisation de html `{{ rdv.notes\|safe }} ` |
 | MITM | O | O | | HTTP non chiffré avec runserver |
 | Phishing | O | O | |sensibilisation nécessaire |

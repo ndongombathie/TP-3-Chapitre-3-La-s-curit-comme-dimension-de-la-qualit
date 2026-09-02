@@ -11,6 +11,7 @@ NE MODIFIEZ PAS CE FICHIER avant d'avoir lu le README de ce dossier.
 """
 from django.db import connection
 from django.shortcuts import render
+from django.db.models import Q
 
 from .models import Patient
 
@@ -20,15 +21,9 @@ def rechercher_patient(request):
     resultats = []
 
     if q:
-        # TODO (TP3) : requête construite par concaténation de chaîne,
-        # sans paramètre lié. Testez avec q = ' OR '1'='1
-        requete_sql = (
-            "SELECT id, nom, prenom, email, est_vip FROM patients_patient "
-            f"WHERE nom LIKE '%{q}%' OR prenom LIKE '%{q}%'"
-        )
-        with connection.cursor() as cursor:
-            cursor.execute(requete_sql)
-            colonnes = [col[0] for col in cursor.description]
-            resultats = [dict(zip(colonnes, ligne)) for ligne in cursor.fetchall()]
-
+        resultats = Patient.objects.filter(Q(nom__icontains=q) | Q(prenom__icontains=q))
+    else:
+        resultats = Patient.objects.all()
+        
     return render(request, "patients/recherche.html", {"q": q, "resultats": resultats})
+
