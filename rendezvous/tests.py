@@ -53,3 +53,11 @@ class RendezVousServiceTest(TestCase):
 
     def test_facturer_patient_sans_rendez_vous_renvoie_zero(self):
         self.assertEqual(self.service.facturer_patient(self.patient), 0)
+        
+    ## TODO (TP3) : ajouter un test qui aurait échoué avant votre correctif.(xxs)
+    def test_facturer_patient_avec_notes(self):
+        rdv = self.service.creer_rendez_vous(self.patient, TypeConsultation.GENERALISTE, date(2026, 7, 21))
+        rdv.notes = "<script>alert('XSS')</script>"
+        rdv.save()
+        response = self.client.get(f'/rendezvous/facture/{self.patient.id}/')
+        self.assertNotContains(response, "<script>alert('XSS')</script>")
