@@ -104,8 +104,9 @@ Avant le correctif, la fonction connexion() accepte les tentatives de connexion 
 
 * **Que se passe-t-il après correctif ?**
 
-Après le correctif, un mécanisme de limitation des tentatives est mis en place. Après un certain nombre d'échecs consécutifs, les nouvelles tentatives sont ralenties, temporairement bloquées ou refusées, par exemple avec une réponse HTTP 429 Too Many Requests. Cela réduit fortement la possibilité pour un attaquant d'essayer rapidement un grand nombre de mots de passe.
+Après le correctif, un mécanisme de limitation des tentatives est mis en place. Après un certain nombre d'échecs consécutifs, les nouvelles tentatives sont ralenties, temporairement bloquées ou refusées. Cela réduit fortement la possibilité pour un attaquant d'essayer rapidement un grand nombre de mots de passe.
 
+![alt text](<Capture d’écran du 2026-09-02 14-07-17.png>)
 
 **CID visé :** la confidentialité, la disponibilité(si le nombre de tentatives de connexion est tres important).
 
