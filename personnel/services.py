@@ -1,14 +1,7 @@
 from django.core.cache import cache
 
 class LoginThrottle:
-    """
-    Limite le nombre de tentatives de connexion pour un utilisateur donné.
-
-    Cette classe est un exemple simple de "throttling" (limitation de débit)
-    pour prévenir les attaques par force brute. Elle n'est pas thread-safe et
-    ne persiste pas les données entre les redémarrages du serveur.
-    """
-
+    
     def __init__(self, max_attempts: int = 5):
         self.max_attempts = max_attempts
         self.attempts = {}
