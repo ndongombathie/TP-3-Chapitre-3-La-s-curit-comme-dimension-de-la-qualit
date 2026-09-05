@@ -2,7 +2,7 @@
 ### SAST - Semgrep
 ### Résultat du scan Semgrep
 
-![alt text](<Capture d’écran du 2026-09-02 14-43-08.png>)
+![alt text](<images/Capture d’écran du 2026-09-02 14-43-08.png>)
 
 Après l'exécution du scan SAST avec **Semgrep**, aucune vulnérabilité n'a été détectée (**0 finding**).
 

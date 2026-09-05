@@ -24,7 +24,7 @@ de votre projet.
 
   Oui ,le mot de passe est stocké et vérifié correctement avec le hash de mot de passe de Django.
 
-  ![alt text](<Capture d’écran du 2026-08-28 13-01-36.png>)
+  ![alt text](<images/Capture d’écran du 2026-08-28 13-01-36.png>)
 
 ## Intégrité
 

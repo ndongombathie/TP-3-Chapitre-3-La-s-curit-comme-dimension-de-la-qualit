@@ -39,11 +39,11 @@ et comparez le nombre de résultats avec une recherche normale. Collez
 votre observation (nombre de résultats avant/après).
 * **Recherche normale**
 
-![alt text](<Capture d’écran du 2026-08-28 10-02-14.png>)
+![alt text](<images/Capture d’écran du 2026-08-28 10-02-14.png>)
 
 * **Recherche avancée avec injection SQL**
 
-![alt text](<Capture d’écran du 2026-08-28 10-07-28.png>)
+![alt text](<images/Capture d’écran du 2026-08-28 10-07-28.png>)
 
 **CID visé :** la confidentialité.
 
@@ -72,7 +72,7 @@ patient. Que se passe-t-il avant correctif ? Après ?
 
 * **avant correctif**
 
-![alt text](<Capture d’écran du 2026-08-28 10-50-34.png>)
+![alt text](<images/Capture d’écran du 2026-08-28 10-50-34.png>)
 
 Une boite de dialogue apparaît avec le message "xss" donc le contenu HTML est injecté dans la page facture du patient. le navigateur exécute le script et affiche le message "xss" dans la console du navigateur.
 
@@ -100,13 +100,13 @@ Que se passe-t-il avant correctif ? Après ?
 
 Avant le correctif, la fonction connexion() accepte les tentatives de connexion successives sans appliquer de limitation. Chaque mauvais mot de passe provoque simplement le message « Identifiants incorrects » puis une redirection HTTP 302 vers la page de connexion. Même après 20 tentatives consécutives, aucun blocage, ralentissement ou limitation n'est appliqué. L'application est donc vulnérable aux attaques par force brute.
 
-![alt text](<Capture d’écran du 2026-09-02 12-24-50.png>)
+![alt text](<images/Capture d’écran du 2026-09-02 12-24-50.png>)
 
 * **Que se passe-t-il après correctif ?**
 
 Après le correctif, un mécanisme de limitation des tentatives est mis en place. Après un certain nombre d'échecs consécutifs, les nouvelles tentatives sont ralenties, temporairement bloquées ou refusées. Cela réduit fortement la possibilité pour un attaquant d'essayer rapidement un grand nombre de mots de passe.
 
-![alt text](<Capture d’écran du 2026-09-02 14-07-17.png>)
+![alt text](<images/Capture d’écran du 2026-09-02 14-07-17.png>)
 
 **CID visé :** la confidentialité, la disponibilité(si le nombre de tentatives de connexion est tres important).
 
