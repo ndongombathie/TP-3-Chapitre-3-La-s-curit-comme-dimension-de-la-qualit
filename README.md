@@ -103,10 +103,13 @@ clé de cette partie : le SAST ne remplace pas une revue humaine ni le DAST.
 
 Avec le serveur Django lancé (`python manage.py runserver`), dans un autre
 terminal (nécessite Docker) :
+```bash
+docker pull zaproxy/zap-stable
+```
 
 ```bash
-docker run -t owasp/zap2docker-stable zap-baseline.py \
-  -t http://host.docker.internal:8000/rendezvous/
+docker run -t zaproxy/zap-stable zap-baseline.py \
+    -t http://host.docker.internal:8000/rendezvous/
 ```
 
 Le "baseline scan" est une analyse passive rapide, adaptée à un TP.
