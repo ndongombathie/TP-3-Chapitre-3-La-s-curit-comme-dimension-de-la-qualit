@@ -23,3 +23,5 @@ Le SAST ne remplace donc :
 * ni les tests fonctionnels et de sécurité réalisés dans différents scénarios.
 
 Le résultat **0 vulnérabilité détectée** signifie donc uniquement que **Semgrep n'a trouvé aucune vulnérabilité correspondant aux règles utilisées lors du scan**, et non que l'application est exempte de vulnérabilités.
+
+Lien du depot git : https://github.com/ndongombathie/TP-3-Chapitre-3-La-s-curit-comme-dimension-de-la-qualit

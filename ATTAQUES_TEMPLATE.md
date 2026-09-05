@@ -154,3 +154,5 @@ Remplissez ce tableau pour les 6 attaques (reprend la structure du cours) :
 | XSS | O | | | utilisation de html `{{ rdv.notes\|safe }} ` |
 | MITM | O | O | | HTTP non chiffré avec runserver |
 | Phishing | O | O | |sensibilisation nécessaire |
+
+### Lien du depot git : https://github.com/ndongombathie/TP-3-Chapitre-3-La-s-curit-comme-dimension-de-la-qualit

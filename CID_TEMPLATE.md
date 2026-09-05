@@ -88,3 +88,5 @@ Comme dans l'exemple du cours, remplissez ce tableau pour votre projet :
 | Confidentialité | Les données des patients doivent être accessibles uniquement aux personnes autorisées ; communications HTTPS/TLS ; protection des données sensibles ; contrôle des accès ; authentification forte pour éviter le phishing. | à risque |
 | Intégrité | Les données des rendez-vous ne doivent pas pouvoir être modifiées de manière non autorisée ; supprimer l'utilisation dangereuse de `\|safe` ; gérer les modifications concurrentes ; utiliser validations, transactions et contrôles d'autorisation. | à risque |
 | Disponibilité | L'application doit rester accessible malgré les erreurs et les fortes sollicitations ; gérer les `Patient.DoesNotExist` ; limiter les tentatives de connexion, prévoir du rate limiting et une protection anti-DoS. | à risque |
+
+Lien du depot git : https://github.com/ndongombathie/TP-3-Chapitre-3-La-s-curit-comme-dimension-de-la-qualit

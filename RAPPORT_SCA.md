@@ -22,3 +22,5 @@ Cette analyse illustre le rôle du **SCA dans le SSDLC** : identifier les vulné
 ![alt text](<images/Capture d’écran du 2026-09-05 22-56-05.png>)
 
 aucune vulnérabilité(CVE) n'a été détectée
+
+Lien du depot git : https://github.com/ndongombathie/TP-3-Chapitre-3-La-s-curit-comme-dimension-de-la-qualit
